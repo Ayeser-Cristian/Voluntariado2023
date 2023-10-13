@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <!-- Encabezado del documento HTML -->
+    <!-- Los elementos entre <head></head> proporcionan metadatos y enlaces a recursos externos. -->
+
+    <!-- Enlaces a hojas de estilo externas -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Se enlaza a Bootstrap, un marco de diseño CSS. -->
+
+    <!-- Enlaces a fuentes de iconos  https://cdnjs.com/libraries/font-awesome --> 
+    <!-- ver iconos https://fontawesome.com/icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Se enlaza a Font Awesome, una biblioteca de iconos. -->
+
+    <!-- Vínculo a tu hoja de estilo local 'style.css' -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Se vincula a una hoja de estilo personalizada local llamada 'style.css'. -->
+</head>
+
+<body>
+    <!-- Cuerpo del documento HTML -->
+    <!-- Los elementos entre <body></body> representan el contenido visible de la página web. -->
+
+    <!-- El contenedor principal -->
+    <div class="container">
+        <!-- Un "div" es un elemento de bloque que se utiliza para agrupar y estructurar contenido. -->
+        <!-- "container" es una clase de Bootstrap que da estilo al div principal. -->
+
+        <div class="d-flex justify-content-center h-100">
+            <!-- "d-flex" es una clase de Bootstrap que se utiliza para hacer que los elementos internos se distribuyan de manera flexible. -->
+            <!-- "justify-content-center" se utiliza para centrar horizontalmente los elementos. -->
+            <!-- "h-100" establece una altura del 100% en relación con el contenedor principal. -->
+
+            <div class="card">
+                <!-- "card" es una clase de Bootstrap que se utiliza para crear una tarjeta con un fondo y bordes. La tarjeta contiene el formulario de inicio de sesión. -->
+
+                <div class="card-header">
+                    <!-- Encabezado de la tarjeta que contiene una imagen del logotipo. -->
+                    <img src="imgs/img_login.png" width="40%" , height="100%">
+                    <!-- Se muestra una imagen en el encabezado de la tarjeta. -->
+                </div>
+                <div class="card-body">
+                    <!-- El cuerpo de la tarjeta, donde se encuentra el formulario de inicio de sesión. -->
+
+                    <form>
+                        <!-- Un formulario que permite al usuario ingresar sus credenciales. -->
+
+                        <div class="input-group form-group" style="margin-bottom: 40px;">
+                            <!-- Un grupo de entrada que se utiliza para contener el campo de entrada de usuario. -->
+                            <!-- "input-group" es una clase de Bootstrap que agrega estilos al grupo de entrada. -->
+
+                            <div class="input-group-prepend">
+                                <!-- "input-group-prepend" se utiliza para agregar un elemento antes del campo de entrada. En este caso, se agrega un ícono de usuario. -->
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <!-- Se muestra un ícono de usuario en el grupo de entrada. -->
+                            </div>
+                            <input type="text" class="form-control" placeholder="Ingrese su usuario"  id="username">
+                            <!-- "form-control" es una clase de Bootstrap que se aplica al campo de entrada para darle estilo. -->
+                            <!-- Se crea un campo de entrada de texto para que el usuario ingrese su nombre de usuario. -->
+                        </div>
+
+                        <div class="input-group form-group" style="margin-bottom: 40px;">
+                            <!-- Otro grupo de entrada similar para la contraseña. -->
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                                <!-- Se muestra un ícono de llave en el grupo de entrada. -->
+                            </div>
+                            <input type="password" class="form-control" placeholder="Ingrese su contraseña" id="password">
+                            <!-- Se crea un campo de entrada de contraseña. -->
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center">
+                            <!-- Un "div" que se utiliza para centrar horizontal y verticalmente el botón de "Ingresar". -->
+
+                            <button onclick="login()" type="button" class="btn btn-primary" style="width: 130px;">Ingresar</button>
+                            <!-- Un botón que llama a la función "login()" cuando se hace clic. Se aplica la clase "btn" de Bootstrap para darle estilo. -->
+                            <!-- El botón se usa para enviar el formulario de inicio de sesión. -->
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card-footer">
+                    <!-- El pie de la tarjeta, que contiene enlaces a otras páginas o acciones relacionadas con el inicio de sesión. -->
+
+                    <div class="d-flex justify-content-center links">
+                        <!-- Un "div" que se utiliza para centrar horizontalmente los enlaces. -->
+
+                        <center>
+                            <p class="msg">¿No tienes una cuenta?
+                                <a href="#" style='color:rgb(236, 236, 19);'><b><u>Click Aquí</u> </b></a>
+                            </p>
+                            <!-- Un enlace para registrarse, con texto estilizado. -->
+
+                            <p class="msg">¿Olvidaste tu contraseña?
+                                <a href="#" style='color:rgb(243, 243, 9);'><b><u>Click Aquí</u> </b></a>
+                            </p>
+                            <!-- Un enlace para recuperar la contraseña, con texto estilizado. -->
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dentro de las etiquetas  "script" podemos poner código Js-->
+    <script>
+        // Función para manejar el inicio de sesión
+        function login() {
+            // Se obtienen los valores ingresados en los campos de usuario y contraseña
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Se verifica si las credenciales son correctas
+            if (username === "admin" && password === "1234") {
+                // En caso de credenciales correctas, se muestra un mensaje y se redirige a 'home.html'
+                alert("Bienvenido", username)
+                window.location.href = "home.html";
+            } else {
+                // En caso de credenciales incorrectas, se muestra un mensaje de error
+                alert("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
+            }
+        }
+    </script>
+</body>
+
+</html>

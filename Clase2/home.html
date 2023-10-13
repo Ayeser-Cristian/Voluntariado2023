@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Configuración del documento HTML -->
+          <!-- Establece el idioma principal y la codificación de caracteres del documento. -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!-- Define la ventana de visualización y el título de la página. -->
+        <title>Agenda de Pendientes</title>
+        
+      
+       
+        <!-- Enlaza un archivo CSS externo para aplicar estilos al documento. -->
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+<body>
+    <header>
+        <!-- Encabezado de la página -->
+        <nav class="navbar">
+            <!-- Barra de navegación con clase "navbar" -->
+            <div class="tituloPagina">
+                <!-- Elemento con clase "tituloPagina" para mostrar el titulo de la página. -->
+                <span>Mi Agenda</span>
+                <!-- Muestra el texto "Mi Agenda" como logotipo. -->
+            </div>
+            <div class="user-info">
+                <!-- Elemento con clase "user-info" para mostrar información del usuario. -->
+                <span>Bienvenido, Usuario</span>
+                <!-- Muestra un mensaje de bienvenida genérico con el nombre de usuario "Usuario". -->
+            </div>
+            <div class="logout">
+                <!-- Elemento con clase "logout" para permitir al usuario cerrar sesión. -->
+                <button onclick="logout()">Cerrar sesión</button>
+                <!-- Crea un botón que llama a la función "logout()" cuando se hace clic. -->
+            </div>
+        </nav>
+    </header>
+    <div class="container_home">
+        <!-- Contenedor principal con clase "container_home". -->
+        <h1>Agenda de Pendientes</h1>
+        <!-- Encabezado principal de nivel 1 (h1) que muestra el título "Agenda de Pendientes". -->
+        <input type="text" id="task" placeholder="Agregar un nuevo pendiente">
+        <!-- Campo de entrada de texto para agregar un nuevo pendiente con un marcador de posición. -->
+        <input type="date" id="taskDate">
+        <!-- Campo de entrada de fecha para establecer la fecha del pendiente. -->
+        <input type="time" id="taskTime">
+        <!-- Campo de entrada de hora para establecer la hora del pendiente. -->
+        <button onclick="agregarTarea()">Agregar</button>
+        <!-- Botón que llama a la función "agregarTarea()" cuando se hace clic para agregar una tarea. -->
+        <ul id="todo-list"></ul>
+        <!-- Lista no ordenada (ul) con el identificador "todo-list" para mostrar la lista de pendientes. -->
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Enlaza un archivo JavaScript externo llamado "script.js" para agregar interactividad a la página. -->
+</body>
+</html>
